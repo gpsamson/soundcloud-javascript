@@ -25,7 +25,8 @@ module.exports = function (options = {}) {
     redirect_uri: options.redirect_uri || config.get('redirect_uri'),
     response_type: 'code_and_token',
     scope: options.scope || 'non-expiring',
-    display: 'popup'
+    display: 'popup',
+    isStaging: options.isStaging
   };
 
   // `client_id` and `redirect_uri` have to be passed
