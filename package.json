@@ -10,7 +10,6 @@
   "scripts": {
     "test": "webpack && karma start --single-run",
     "build": "webpack -p",
-    "postinstall": "webpack -p",
     "start": "IS_NPM=1 webpack-dev-server",
     "serve": "node ./serve.js"
   },
