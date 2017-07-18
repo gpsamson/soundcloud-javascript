@@ -6,8 +6,8 @@ const filename = IS_NPM ? 'sdk.js' : 'sdk-' + VERSION + '.js';
 module.exports = {
   entry: './index.js',
   output: {
-    path: __dirname,
-    filename: 'sdk.js',
+    path: path,
+    filename: filename,
     libraryTarget: 'umd'
   },
   module: {
