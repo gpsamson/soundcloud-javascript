@@ -9,8 +9,9 @@ const ID_PREFIX = 'SoundCloud_Dialog';
  * Generates an id for the connect dialog
  * @return {String} id
  */
-const generateId = isStaging => {
-  return [ID_PREFIX, Math.ceil(Math.random() * 1000000).toString(16), isStaging && 'Staging'].join('_');
+const generateId = (env = 'production') => {
+
+  return [ID_PREFIX, Math.ceil(Math.random() * 1000000).toString(16), env].join('_');
 };
 
 /**
@@ -24,7 +25,7 @@ const createURL = (options) => {
 
 class Dialog {
   constructor (options = {}) {
-    this.id = generateId(options.isStaging);
+    this.id = generateId(options.env);
     this.options = options;
     // will be used to identify the correct popup window
     this.options.state = this.id;
